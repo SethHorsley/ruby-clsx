@@ -1,6 +1,10 @@
 ## [Unreleased]
-## [0.1.2] - 2024-03-02
+## [0.1.3] - 2024-03-02
 PUBLIC RELEASE
+remove github actions to publish to rubygems, easier to run rake release
+
+## [0.1.2] - 2024-03-02
+add github actions to publish to rubygems
 
 ## [0.1.1] - 2024-03-03
 ### Changed
