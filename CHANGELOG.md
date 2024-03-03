@@ -1,4 +1,11 @@
 ## [Unreleased]
+## [0.1.2] - 2024-03-02
+PUBLIC RELEASE
+
+## [0.1.1] - 2024-03-03
+### Changed
+- Changed `clsx` to `CLSX`
+
 
 ## [0.1.0] - 2024-03-02
 
