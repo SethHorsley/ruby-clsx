@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    clsx (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.22.2)
+    rake (13.1.0)
+
+PLATFORMS
+  arm64-darwin-23
+  ruby
+
+DEPENDENCIES
+  clsx!
+  minitest (~> 5.16)
+  rake (~> 13.0)
+
+BUNDLED WITH
+   2.5.3

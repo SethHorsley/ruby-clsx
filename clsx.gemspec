@@ -8,17 +8,15 @@ Gem::Specification.new do |spec|
   spec.authors = ["Seth Horsley"]
   spec.email = ["isethi@me.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "A gem for constructing HTML class strings conditionally"
+  spec.description = "Ruby utility for constructing HTML class strings conditionally with the provided syntax, you can define a module named Clsx that includes a method to handle each case: strings, objects (hashes), arrays, and a combination of these with nested structures. This method will recursively process each argument, filter out falsy values, and concatenate the truthy values into a single string."
+  spec.homepage = "https://github.com/iseth/ruby-clsx"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = spec.homepage
+  spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

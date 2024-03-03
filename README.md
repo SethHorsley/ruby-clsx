@@ -1,24 +1,59 @@
 # Clsx
+## A gem for constructing HTML class strings conditionally
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/clsx`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruby utility for constructing HTML class strings conditionally with the provided syntax, you can define a module named Clsx that includes a method to handle each case: strings, objects (hashes), arrays, and a combination of these with nested structures. This method will recursively process each argument, filter out falsy values, and concatenate the truthy values into a single string.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add "clsx"
 
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 
 ## Usage
+Strings (variadic)
+```ruby
+  clsx("foo", true && "bar", "baz")
+  #=> "foo bar baz"
+```
 
-TODO: Write usage instructions here
+Objects
+```ruby
+  clsx({ foo:true, bar:false, baz:is_true? })
+  #=> "foo baz"
+```
+
+Objects (variadic)
+```ruby
+  clsx({ foo:true }, { bar:false }, null, { "--foobar":"hello" })
+  #=> "foo --foobar"
+```
+
+Arrays
+```ruby
+  clsx(["foo", 0, false, "bar"])
+  #=> "foo bar"
+```
+
+Arrays (variadic)
+```ruby
+  clsx(["foo"], ["", 0, false, "bar"], [["baz", [["hello"], "there"]]])
+  #=> "foo bar baz hello there"
+```
+
+Kitchen sink (with nesting)
+```ruby
+  clsx("foo", [1 && "bar", { baz:false, bat:null }, ["hello", ["world"]]], "cya")
+  #=> "foo bar hello world cya"
+```
+
+You can also use clsx in rails views like this:
+```ruby
+  <div class="<%= clsx({ 'border': true, "border-t": false, "border-b":true }) %>">
+    <!-- ... -->
+  </div>
+```
+
 
 ## Development
 
@@ -28,7 +63,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/clsx. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/clsx/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome. Just fork this repo make the changes you want and submit a pull request back to this repo :)
 
 ## License
 
