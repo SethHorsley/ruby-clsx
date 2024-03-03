@@ -4,7 +4,7 @@ require_relative "lib/clsx/version"
 
 Gem::Specification.new do |spec|
   spec.name = "clsx"
-  spec.version = Clsx::VERSION
+  spec.version = CLSX::VERSION
   spec.authors = ["Seth Horsley"]
   spec.email = ["isethi@me.com"]
 

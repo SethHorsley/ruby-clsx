@@ -3,7 +3,7 @@
 require_relative "clsx/version"
 require "clsx/railtie" if defined?(Rails)
 
-module Clsx
+module CLSX
   class Error < StandardError; end
 
   def self.clsx(*args)

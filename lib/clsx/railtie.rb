@@ -12,7 +12,7 @@ module Clsx
 
   module Helper
     def clsx(*)
-      Clsx.clsx(*)
+      CLSX.clsx(*)
     end
   end
 end
