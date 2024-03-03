@@ -11,8 +11,8 @@ module Clsx
   end
 
   module Helper
-    def clsx(*args)
-      Clsx.clsx(*args)
+    def clsx(*)
+      Clsx.clsx(*)
     end
   end
 end

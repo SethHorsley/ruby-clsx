@@ -10,8 +10,6 @@ module Clsx
     args.flat_map { |arg| parse(arg) }.compact.join(" ")
   end
 
-  private
-
   def self.parse(arg)
     case arg
     when String
@@ -20,8 +18,6 @@ module Clsx
       arg.map { |k, v| k if v }.compact
     when Array
       arg.flat_map { |a| parse(a) }
-    else
-      nil
     end
   end
 end

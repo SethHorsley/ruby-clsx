@@ -8,11 +8,11 @@ class ClsxTest < Minitest::Test
   end
 
   def test_objects
-    assert_equal "foo baz", Clsx.clsx({ foo: true, bar: false, baz: true })
+    assert_equal "foo baz", Clsx.clsx({foo: true, bar: false, baz: true})
   end
 
   def test_objects_variadic
-    assert_equal "foo --foobar", Clsx.clsx({ foo: true }, { bar: false }, nil, { "--foobar" => "hello" })
+    assert_equal "foo --foobar", Clsx.clsx({foo: true}, {bar: false}, nil, {"--foobar" => "hello"})
   end
 
   def test_arrays
@@ -24,6 +24,6 @@ class ClsxTest < Minitest::Test
   end
 
   def test_kitchen_sink
-    assert_equal "foo bar hello world cya", Clsx.clsx("foo", [1 && "bar", { baz: false, bat: nil }, ["hello", ["world"]]], "cya")
+    assert_equal "foo bar hello world cya", Clsx.clsx("foo", [1 && "bar", {baz: false, bat: nil}, ["hello", ["world"]]], "cya")
   end
 end
