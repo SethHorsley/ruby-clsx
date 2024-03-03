@@ -11,6 +11,10 @@ jobs:
   lint:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby:
+          - '3.3.0'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
